@@ -1,0 +1,26 @@
+.mint-toast.is-placemiddle {
+    background: transparent;
+    right: -50%;
+    text-align: center;
+    max-width: 85%;
+}
+
+.mint-toast-text {
+    color: #fff;
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: -0.36px;
+    padding: 2px 33px 12px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.mint-toast-text:before {
+    content: "";
+    width: 100%;
+    height: 12px;
+    display: block;
+}

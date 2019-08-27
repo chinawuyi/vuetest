@@ -1,0 +1,973 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+code,
+del,
+dfn,
+em,
+img,
+q,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+.btn,
+button {
+    font-family: "PingFangSC-Regular", "Helvetica Neue", "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+//背景路径
+$bg-img:'../../../assets/images/';
+//颜色
+$colorf:#fff;
+$color3:#333;
+$color2:#222;
+$color9:#999;
+$color0:#000;
+$color6:#666;
+$colorc:#ccc;
+$colorf6:#f6f6f6;
+$colord9:#d9d9d9;
+$colord8:#d8d8d8;
+$colord1:#d1d1d1;
+$colore5:#e5e5e5;
+$colorfb1:#FFFBF1;
+$colorfa3:#ffaa31;
+$colorf70:#fd7f00;
+$colorfa0:#FFAC00;
+$colorf2f1:#F2F1F1;
+$colorf780:#FF7800;
+$colorf700:#FF7000;
+$liborder:0.5px solid $colord1;
+$bor:0.5px solid $colord8;
+$bore5:0.5px solid $colore5;
+html {
+    color: $color3;
+}
+
+
+
+
+
+//图标选中样式
+@mixin icon-checked-style($img) {
+    background-image: url($bg-img + $img);
+}
+
+//按钮
+@mixin pub-button($w, $h, $bg-color, $color, $fz) {
+    width: $w;
+    background: $bg-color;
+    height: $h;
+    text-align: center;
+    color: $color;
+    font-size: $fz;
+    display: inline-block;
+}
+
+//transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+
+
+//超出隐藏显示省略号
+@mixin singleFlow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// 设置PingFangSC-Medium
+@mixin pfm () {
+    font-family: "PingFangSC-Medium", "Helvetica Neue", "Roboto", sans-serif;
+}
+
+@mixin pfr () {
+    font-family: "PingFangSC-Regular", "Helvetica Neue", "Roboto", sans-serif;
+}
+
+
+//清除浮动
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+//超出隐藏显示省略号
+@mixin singleFlow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//多行文本超出隐藏显示省略号
+@mixin Flow($line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+// 背景图片地址和大小
+@mixin bis($url) {
+    background-image: url($bg-img + $url);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+@mixin bgg($url, $width, $height, $x, $y) {
+    background: url($url) no-repeat $x $y;
+    -webkit-background-size: $width $height;
+    background-size: $width $height;
+}
+
+//圆角
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//定位全屏
+@mixin allcover {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+//定位上下左右居中
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+//宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+
+
+//字体大小，颜色
+@mixin sc($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+    display: flex;
+    justify-content: $type;
+}
+
+//毛玻璃效果
+@mixin cover($size:10px) {
+    -webkit-filter: blur($size);
+    /* Chrome, Opera */
+    -moz-filter: blur($size);
+    -ms-filter: blur($size);
+    filter: blur($size);
+}
+
+//倒三角
+@mixin down($size, $color) {
+    width: 0;
+    height: 0;
+    border-width: $size $size 0;
+    border-style: solid;
+    border-color: $color transparent transparent;
+}
+
+//右边三角
+@mixin leftA($size, $color) {
+    width: 0;
+    height: 0;
+    border-width: $size;
+    border-style: solid;
+    border-color: transparent transparent transparent $color;
+}
+
+//左三角
+@mixin rightA($size, $color) {
+    width: 0;
+    height: 0;
+    border-width: $size;
+    border-style: solid;
+    border-color: transparent $color transparent transparent;
+}
+
+//图标公共样式
+@mixin icon-style($w, $h, $img) {
+    width: $w;
+    height: $h;
+    display: inline-block;
+    background: url($bg-img + $img) no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+}
+
+//图标选中样式
+@mixin icon-checked-style($img) {
+    background-image: url($bg-img + $img);
+}
+
+//border
+$border:1px solid $colorf6;
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+.shadowLayer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 111;
+}
+
+
+
+
+/********/
+
+.common-sec {
+    .item-mid {
+        padding: 0 4%;
+        background: $colorf;
+    }
+    .row {
+        font-size: 0;
+        white-space: nowrap;
+        .title-name {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
+            font-size: 15px;
+        }
+        .des {
+            display: inline-block;
+            vertical-align: middle;
+            width: 50%;
+            text-align: right;
+            font-size: 14px;
+            color: $color6;
+        }
+    }
+    margin-bottom:10px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+//提示框样式更改
+.mint-toast.is-placemiddle {
+    background: transparent;
+    right: -50%;
+    text-align: center;
+    max-width: 85%;
+    .mint-toast-text {
+        color: #fff;
+        font-size: 15px;
+        line-height: 21px;
+        letter-spacing: -0.36px;
+        padding: 2px 33px 12px;
+        background: rgba(0, 0, 0, 0.7);
+        @include borderRadius(10px);
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        &:before {
+            content: "";
+            width: 100%;
+            height: 12px;
+            display: block;
+        }
+    }
+    //加载资源gif
+    .loadResources {
+        width: 15px;
+        height: 15px;
+        display: block;
+        -webkit-animation: load-resources-rotate 0.8s infinite linear;
+        animation: load-resources-rotate 0.8s infinite linear;
+        border: 2px solid transparent;
+        border-top-color: rgb(204, 204, 204);
+        border-left-color: rgb(204, 204, 204);
+        border-bottom-color: rgb(204, 204, 204);
+        z-index: 1;
+        border-radius: 50%;
+        position: absolute;
+        left: 45px;
+        top: 45px;
+        &+.mint-toast-text {
+            padding: 0px 22px 20px 45px;
+        }
+    }
+    @-webkit-keyframes load-resources-rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes load-resources-rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+}
+
+
+
+//修改轮播样式
+.confirmOrder-con {
+    .banner {
+        .mint-swipe-indicator {
+            width: 8px;
+            height: 2px;
+            background: #656766;
+            margin: 0 2px;
+            vertical-align: middle;
+            @include borderRadius(0);
+            &.is-active {
+                width: 8px;
+                height: 8px;
+                background: $colord8;
+                border: 2px solid #656766;
+                @include borderRadius(50%);
+            }
+        }
+    }
+    .configure {
+        .mint-swipe-indicators {
+            bottom: 11px;
+        }
+        .mint-swipe-indicator {
+            width: 7px;
+            height: 7px;
+            background: #d9d7d8;
+            @include borderRadius(50%);
+            margin: 0 5px;
+            &.is-active {
+                background: #666664;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+//单选框样式修改
+.mint-radio-input:checked+.mint-radio-core::after {
+    border-color: #fff;
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+}
+
+.mint-radio-input:checked+.mint-radio-core {
+    background-color: #FFAA31;
+    border-color: #FFAA31;
+}
+
+.mint-radio-input:checked+.mint-radio-core::after {
+    background-color: rgba(255, 255, 255, 0.01)
+}
+
+.mint-radio-core::after {
+    border: 0.053333rem solid transparent;
+    border-left: 0;
+    border-top: 0;
+    content: " ";
+    top: 0.08rem;
+    left: 0.16rem;
+    position: absolute;
+    width: 0.106667rem;
+    height: 0.213333rem;
+    border-radius: 0%;
+    -webkit-border-radius: 0%;
+    -webkit-transform: rotate(45deg) scale(0);
+    -ms-transform: rotate(45deg) scale(0);
+    transform: rotate(45deg) scale(0);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+}
+
+.mint-radio-core {
+    border: 0.026667rem solid #FFAA31;
+    width: 18px;
+    height: 18px;
+}
+
+.mint-radio-label {
+    font-size: 14px;
+}
+
+.mint-radiolist-title {
+    position: relative;
+    font-size: 15px;
+    color: #666666;
+    width: 80px;
+    line-height: 50px;
+    margin: 0;
+    margin-right: 11px;
+    float: left;
+}
+
+.mint-cell {
+    float: left;
+}
+
+.mint-cell-wrapper {
+    background-image: none;
+}
+
+.mint-cell:last-child {
+    background-image: none;
+}
+
+//日期时间选择器样式修改
+.mint-datetime-cancel {
+    display: none;
+}
+
+.mint-datetime-action {
+    width: 20%;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333333;
+}
+
+.mint-datetime .picker-toolbar {
+    border-bottom: none;
+}
+
+.picker-toolbar {
+    background-color: #F7F7F7;
+}
+
+.picker-items {
+    background-color: #F9F9FA;
+}
+
+.mint-radio-core::after {
+    left: 0.14rem;
+    top: 0.06rem;
+}
+
+
+
+
+//toast样式修改
+.mint-toast {
+    z-index: 99999;
+}
+
+// 儿童信息框样式修改
+.v-modal {
+    opacity: 0.3;
+    background: #333333;
+}
+
+.mint-msgbox-wrapper .mint-msgbox {
+    width: 245px;
+    height: 145px;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+
+.mint-msgbox-header .mint-msgbox-title {
+    font-family: PingFangSC-Medium;
+    font-size: 15px;
+    color: #333333;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.mint-msgbox-wrapper .mint-msgbox .mint-msgbox-content .mint-msgbox-message {
+    // width: 214px;
+    // margin: 0 auto;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.mint-msgbox-wrapper .mint-msgbox .mint-msgbox-content {
+    padding-left: 20px;
+    padding-right: 13.5px;
+    padding-bottom: 13px;
+}
+
+
+.mint-button:after {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.mint-msgbox-wrapper .mint-msgbox .mint-msgbox-content .mint-msgbox-message {
+    text-align: left;
+}
+
+
+
+
+
+
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    color: #333;
+    font-weight: normal;
+    font-family: "PingFangSC-Regular";
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing: antialiased;
+    &:hover{
+        outline: none;
+    }
+}
+
+body{
+    background: #f1f1f1;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea { -webkit-appearance: none;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+
+.back_img{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.margin{
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+
+
+
+.show{
+    display: block;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paddingTop{
+    padding-top: 1.95rem;
+}
+
+@keyframes backOpacity{
+    0%   { opacity: 1 }
+    25%  { opacity: .5 }
+    50%  { opacity: 1 }
+    75%  { opacity: .5 }
+    100% { opacity: 1 }
+}
+
+.animation_opactiy{
+    animation: backOpacity 2s ease-in-out infinite;
+}
+.mint-msgbox{
+    max-width: 285px;
+    min-height: 145px;
+    width: auto;
+    border-radius: 12px;
+}
+.mint-msgbox-header{
+    padding-top:23px;
+}
+.mint-msgbox-title{
+    font-family: PingFangSC-Medium;
+    font-size: 15px;
+    color: #333333;
+    letter-spacing: -0.36px;
+    text-align: center;
+}
+.mint-msgbox-content{
+    padding: 0;
+}
+.mint-msgbox-message{
+    //width: 100%;
+    padding: 0;
+    font-family: PingFangSC-Medium;
+    font-size: 15px;
+    color: #333333;
+    text-align: center;
+    border: 1px solid transparent;
+}
+.mint-msgbox .mint-msgbox-cancel{
+    color: #666;
+    background: #fff;
+}
+.mint-msgbox-message{
+    p{
+        width: 285px;
+        padding: 13px 20px 22px;
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #666666;
+        letter-spacing: 0;
+        line-height: 24px;
+        text-align: left;
+    }
+    div{
+        width: 245px;
+        position: relative;
+        height: 102px;
+        padding: 0 20px;
+        span{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+
+
+
+.mint-msgbox-btn{
+    height: 42px;
+}
+.mint-msgbox-cancel,.mint-msgbox-confirm{
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+}
+.mint-msgbox-cancel:active{
+    color: #FFAC00;
+}
+
+$gary: #333333;
+$dg: #666666;
+$light: #999999;
+$bc: #FFAC00;
+$bg: #F1F1F1;
+$tc: #333;
+$cc: #666;
+$fc: #999;
+
+//清除浮动
+@mixin clearfix {
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+@mixin singleFlow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin Flow($line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+// 背景图片地址和大小
+@mixin bis($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+@mixin bgg($url, $width, $height, $x, $y) {
+    background: url($url) no-repeat $x $y;
+    -webkit-background-size: $width $height;
+    background-size: $width $height;
+}
+
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+//定位全屏
+@mixin allcover {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+//定位上下左右居中
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+//宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+
+
+
+
+
+//字体大小，颜色
+@mixin sc($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+    display: flex;
+    justify-content: $type;
+}
+
+//毛玻璃效果
+@mixin cover($size:10px) {
+    -webkit-filter: blur($size); /* Chrome, Opera */
+    -moz-filter: blur($size);
+    -ms-filter: blur($size);
+    filter: blur($size);
+}
+
+//倒三角
+@mixin down($size,$color) {
+    width: 0;
+    height: 0;
+    border-width: $size $size 0;
+    border-style: solid;
+    border-color: $color transparent transparent;
+}
+
+//右边三角
+@mixin leftA($size,$color) {
+    width: 0;
+    height: 0;
+    border-width: $size;
+    border-style: solid;
+    border-color: transparent transparent transparent $color;
+}
+//左三角
+@mixin rightA($size,$color) {
+    width: 0;
+    height: 0;
+    border-width: $size;
+    border-style: solid;
+    border-color: transparent  $color transparent transparent;
+}

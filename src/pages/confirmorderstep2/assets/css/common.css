@@ -1,0 +1,278 @@
+.shadowLayer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 111;
+}
+
+.mint-radio-input:checked+.mint-radio-core::after {
+    border-color: #fff;
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+}
+
+.mint-radio-input:checked+.mint-radio-core {
+    background-color: #00C892;
+    border-color: #00C892;
+}
+
+.mint-radio-input:checked+.mint-radio-core::after {
+    background-color: rgba(255, 255, 255, 0.01)
+}
+
+.mint-radio-core::after {
+    border: 0.053333rem solid transparent;
+    border-left: 0;
+    border-top: 0;
+    content: " ";
+    top: 0.08rem;
+    left: 0.16rem;
+    position: absolute;
+    width: 0.106667rem;
+    height: 0.213333rem;
+    border-radius: 0%;
+    -webkit-border-radius: 0%;
+    -webkit-transform: rotate(45deg) scale(0);
+    -ms-transform: rotate(45deg) scale(0);
+    transform: rotate(45deg) scale(0);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+}
+
+.mint-radio-core {
+    border: 0.026667rem solid #00C892;
+    width: 18px;
+    height: 18px;
+}
+
+.mint-radio-label {
+    font-size: 14px;
+}
+
+.mint-radiolist-title {
+    position: relative;
+    font-size: 15px;
+    color: #666666;
+    width: 80px;
+    line-height: 50px;
+    margin: 0;
+    margin-right: 11px;
+    float: left;
+}
+
+.mint-cell {
+    float: left;
+}
+
+.mint-cell-wrapper {
+    background-image: none;
+}
+
+.mint-cell:last-child {
+    background-image: none;
+}
+
+.mint-datetime-cancel {
+    display: none;
+}
+
+.mint-datetime-action {
+    width: 20%;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333333;
+}
+
+.mint-datetime .picker-toolbar {
+    border-bottom: none;
+}
+
+.picker-toolbar {
+    background-color: #F7F7F7;
+}
+
+.picker-items {
+    background-color: #F9F9FA;
+}
+
+.mint-radio-core::after {
+    left: 0.14rem;
+    top: 0.06rem;
+}
+
+.v-modal {
+    opacity: 0.3;
+    background: #333333;
+}
+
+.mint-msgbox-wrapper .mint-msgbox {
+    width: 245px;
+    height: 145px;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+
+.mint-msgbox-header .mint-msgbox-title {
+    font-family: PingFangSC-Medium;
+    font-size: 15px;
+    color: #333333;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.mint-msgbox-wrapper .mint-msgbox .mint-msgbox-content .mint-msgbox-message {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.mint-msgbox-wrapper .mint-msgbox .mint-msgbox-content {
+    padding-left: 20px;
+    padding-right: 13.5px;
+    padding-bottom: 13px;
+}
+
+.mint-button:after {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.mint-msgbox-wrapper .mint-msgbox .mint-msgbox-content .mint-msgbox-message {
+    text-align: left;
+}
+
+.mint-radio-input:checked+.mint-radio-core::after {
+    border-color: #fff;
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+}
+
+.mint-radio-input:checked+.mint-radio-core {
+    background-color: #00C892;
+    border-color: #00C892;
+}
+
+.mint-radio-input:checked+.mint-radio-core::after {
+    background-color: rgba(255, 255, 255, 0.01)
+}
+
+.mint-radio-core::after {
+    border: 0.053333rem solid transparent;
+    border-left: 0;
+    border-top: 0;
+    content: " ";
+    top: 0.08rem;
+    left: 0.16rem;
+    position: absolute;
+    width: 0.106667rem;
+    height: 0.213333rem;
+    border-radius: 0%;
+    -webkit-border-radius: 0%;
+    -webkit-transform: rotate(45deg) scale(0);
+    -ms-transform: rotate(45deg) scale(0);
+    transform: rotate(45deg) scale(0);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+}
+
+.mint-radio-core {
+    border: 0.026667rem solid #00C892;
+    width: 18px;
+    height: 18px;
+}
+
+.mint-radio-label {
+    font-size: 14px;
+}
+
+.mint-radiolist-title {
+    position: relative;
+    font-size: 15px;
+    color: #666666;
+    width: 80px;
+    line-height: 50px;
+    margin: 0;
+    margin-right: 11px;
+    float: left;
+}
+
+.mint-cell {
+    float: left;
+}
+
+.mint-cell-wrapper {
+    background-image: none;
+}
+
+.mint-cell:last-child {
+    background-image: none;
+}
+
+.mint-datetime-cancel {
+    display: none;
+}
+
+.mint-datetime-action {
+    width: 20%;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333333;
+}
+
+.mint-datetime .picker-toolbar {
+    border-bottom: none;
+}
+
+.picker-toolbar {
+    background-color: #F7F7F7;
+}
+
+.picker-items {
+    background-color: #F9F9FA;
+}
+
+.mint-radio-core::after {
+    left: 0.14rem;
+    top: 0.06rem;
+}
+
+.mt-button {
+    position: fixed;
+    bottom: 25px;
+    left: 15px;
+    font-size: 19px;
+    width: 92%;
+    color: #fff;
+    height: 45px;
+    background: #00C892;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.mint-msgbox-btn {
+    height: 42px;
+}
+
+.mint-msgbox-cancel,
+.mint-msgbox-confirm {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+}
+
+.mint-msgbox-cancel:active {
+    color: #FFAC00;
+}
